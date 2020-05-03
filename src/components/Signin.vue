@@ -38,7 +38,6 @@
           email: this.email,
           password: this.password,
         }
-        console.log(formData)
       }
     }
   }

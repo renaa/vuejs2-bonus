@@ -25,9 +25,8 @@ export default class Dashboard extends Vue {
   // }
   // Lifecycle hooks
   created () { 
-    axios.get('https://vue-auth---axios---more.firebaseio.com/users.json')
+    axios.get('/users.json')
       .then(res => {
-        console.log(res)
         const data = res.data
         const users = []
         for (const key in data){
@@ -35,10 +34,9 @@ export default class Dashboard extends Vue {
           user.id = key
           users.push(user)
         }
-        console.log(users)
         this.email = users[0].email
       })
-      .catch(res => console.log(res))
+      .catch(error => console.error(error))
   }
 
 
